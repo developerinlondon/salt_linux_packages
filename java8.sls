@@ -1,3 +1,10 @@
+{% if grains['os_family'] in ['RedHat'] %}
+java-1.8.0-openjdk:
+  pkg:
+   - installed
+{% endif %}
+
+{% if grains['os_family'] in ['Debian'] %}
 /etc/apt/sources.list.d/webupd8team-java.list:
   file.managed:
     - source: salt://java/files/webupd8team-java.list
@@ -34,4 +41,4 @@ remove_openjdk:
       - openjdk-6-jre
       - openjdk-6-jre-headless
       - openjdk-6-jre-lib
-
+{% endif %}
