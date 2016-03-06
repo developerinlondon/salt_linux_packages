@@ -17,4 +17,5 @@ pillar_roots:
    - /srv/pillar/base
 
 To install package using salt script
+
     - salt 'minion' state.sls apache2
