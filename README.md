@@ -1,5 +1,6 @@
 Salt is a Python-based open source configuration management software and remote execution engine. 
 
+
 # salt_linux_packages
 
 
@@ -14,3 +15,6 @@ file_roots:
 pillar_roots:
   base:
    - /srv/pillar/base
+
+To install package using salt script
+    - salt 'minion' state.sls apache2
